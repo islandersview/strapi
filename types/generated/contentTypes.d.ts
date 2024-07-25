@@ -368,6 +368,7 @@ export interface ApiItemListingItemListing extends Schema.CollectionType {
     singularName: 'item-listing';
     pluralName: 'item-listings';
     displayName: 'item-listing';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -429,6 +430,27 @@ export interface ApiItemListingItemListing extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<false>;
+    slug: Attribute.UID<'api::item-listing.item-listing', 'name'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    price: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 5;
+        },
+        number
+      > &
+      Attribute.DefaultTo<1>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

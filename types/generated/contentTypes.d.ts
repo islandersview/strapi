@@ -451,6 +451,14 @@ export interface ApiItemListingItemListing extends Schema.CollectionType {
         number
       > &
       Attribute.DefaultTo<1>;
+    address: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Davao City'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

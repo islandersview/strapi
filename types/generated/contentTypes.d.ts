@@ -393,7 +393,7 @@ export interface ApiItemListingItemListing extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    category: Attribute.Enumeration<['rent', 'sale']> &
+    category: Attribute.Enumeration<['rent', 'sale', 'rent/sale']> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {

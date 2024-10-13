@@ -43,7 +43,8 @@
       "type": "enumeration",
       "enum": [
         "rent",
-        "sale"
+        "sale",
+        "rent/sale"
       ],
       "required": true,
       "default": "sale"

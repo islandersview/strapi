@@ -416,12 +416,6 @@ export interface ApiItemListingItemListing extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    date_sold: Attribute.DateTime &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     is_featured: Attribute.Boolean &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -431,6 +425,7 @@ export interface ApiItemListingItemListing extends Schema.CollectionType {
       }> &
       Attribute.DefaultTo<false>;
     slug: Attribute.UID<'api::item-listing.item-listing', 'name'> &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -459,6 +454,14 @@ export interface ApiItemListingItemListing extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<'Davao City'>;
+    sold: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
